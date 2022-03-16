@@ -7,6 +7,6 @@ SELECT
     MIN(CASE WHEN Occupation = 'Actor' THEN Name END)
 FROM
     (SELECT Name, Occupation,
-        ROW_NUMBER() OVER(PARTITION BY Occupation ORDER BY Name) AS R
+        RANK() OVER(PARTITION BY Occupation ORDER BY Name) AS R
     FROM OCCUPATIONS) AS O
 GROUP BY R;
