@@ -1,0 +1,12 @@
+-- https://www.hackerrank.com/challenges/the-pads/problem
+
+SELECT CONCAT(NAME, '(', LEFT(OCCUPATION, 1), ')') AS NAMEO
+FROM OCCUPATIONS
+ORDER BY NAMEO;
+
+SELECT CONCAT('There are a total of ',
+           COUNT(OCCUPATION), ' ',
+           LOWER(OCCUPATION), 's.') AS TOTAL
+FROM OCCUPATIONS
+GROUP BY OCCUPATION
+ORDER BY TOTAL, OCCUPATION;
